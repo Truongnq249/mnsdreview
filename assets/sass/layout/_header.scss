@@ -5,7 +5,9 @@
     &-inner {
         padding: 20px 0;
     }
-    &-logo {}
+    &-logo {
+        max-width: 150px;
+    }
     &-menu {
         li {
             margin: 0 20px;

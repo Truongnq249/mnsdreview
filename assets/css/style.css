@@ -580,6 +580,9 @@ select {
 .header-inner {
   padding: 20px 0;
 }
+.header-logo {
+  max-width: 150px;
+}
 .header-menu li {
   margin: 0 20px;
 }
