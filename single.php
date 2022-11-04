@@ -15,7 +15,7 @@ get_header();
 <main>
     <div class="container">
         <div class="single-blog__head position-relative">
-            <img class="w-100 h-100 position-absolute" src="<?php 
+            <img class="w-100 h-100 position-absolute" alt="<?php the_title();?>" src="<?php 
                 if(get_field('post_bg')){
                     echo get_field('post_bg');
                 }else{
