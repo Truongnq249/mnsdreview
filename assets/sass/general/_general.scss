@@ -170,6 +170,10 @@ main {
 
 /** Style for post **/
 
+.post-content a {
+    color: var(--primary-color);
+}
+
 .post-content blockquote {
     padding: 10px 20px;
     margin: 0 0 20px;
@@ -262,5 +266,8 @@ main {
 .post-content h4,
 .post-content h5,
 .post-content h6 {
-    margin: 0 0 30px
+    margin: 0 0 15px;
+    a {
+        color: var(--black);
+    }
 }

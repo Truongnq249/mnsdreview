@@ -417,6 +417,10 @@ select {
 }
 
 /** Style for post **/
+.post-content a {
+  color: var(--primary-color);
+}
+
 .post-content blockquote {
   padding: 10px 20px;
   margin: 0 0 20px;
@@ -509,7 +513,14 @@ select {
 .post-content h4,
 .post-content h5,
 .post-content h6 {
-  margin: 0 0 30px;
+  margin: 0 0 15px;
+}
+.post-content h2 a,
+.post-content h3 a,
+.post-content h4 a,
+.post-content h5 a,
+.post-content h6 a {
+  color: var(--black);
 }
 
 /* Components
