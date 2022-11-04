@@ -1,0 +1,19 @@
+/** Breadcrumb **/
+
+.breadcrumb {
+    padding: 20px 0;
+    background-color: #fff;
+    a {
+        color: var(--black);
+        font-weight: 600;
+        &:hover {
+            color: var(--primary-color);
+        }
+    }
+}
+
+.breadcrumb-home-icon {
+    width: 15px;
+    height: 15px;
+    background-image: url(./svg/home.svg);
+}

@@ -1,0 +1,191 @@
+/** Header **/
+
+.header {
+    box-shadow: 0px 5px 5px 0 #30444e1a;
+    &-inner {
+        padding: 20px 0;
+    }
+    &-logo {}
+    &-menu {
+        li {
+            margin: 0 20px;
+            &:last-child {
+                margin-right: 0;
+            }
+            a {
+                color: var(--black);
+                position: relative;
+                display: block;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    width: 0;
+                    height: 3px;
+                    background-color: var(--primary-color);
+                    bottom: -5px;
+                    left: 0;
+                    -webkit-transition: .3s;
+                    -o-transition: .3s;
+                    transition: .3s;
+                }
+            }
+            &:hover>a:after {
+                width: 100%;
+            }
+            &.current-menu-item a {
+                &:after {
+                    width: 100%;
+                }
+            }
+        }
+        @include breakpoint(1199) {
+            position: fixed;
+            background-color: #fff;
+            top: 71px;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            opacity: 0;
+            visibility: hidden;
+            -webkit-transition: opacity .3s, visibility .3s;
+            -o-transition: opacity .3s, visibility .3s;
+            transition: opacity .3s, visibility .3s;
+            &.active {
+                opacity: 1;
+                visibility: visible;
+            }
+            &:before {
+                content: '';
+                display: block;
+                height: 40px;
+            }
+            ul {
+                flex-direction: column;
+                align-items: center;
+                li {
+                    margin-bottom: 30px;
+                    a {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+    &-action {}
+    &-search {
+        &-icon {
+            padding-right: 20px;
+            border-right: 1px solid var(--lightgrey);
+            svg {
+                width: 15px;
+            }
+            &:hover svg {
+                color: var(--primary-color);
+            }
+        }
+    }
+    &-social {
+        padding-left: 20px;
+        li {
+            &:not(:last-child) {
+                margin-right: 10px;
+            }
+            a {
+                color: var(--black);
+                &:hover svg {
+                    color: var(--primary-color);
+                }
+                svg {
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+        }
+    }
+    &-bars {
+        padding-left: 15px;
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+        .bar-svg {}
+        &.clicked .bar-svg,
+        .close-svg {
+            display: none;
+        }
+        &.clicked .close-svg {
+            display: block;
+        }
+    }
+}
+
+.header-search {
+    top: 0;
+    left: 0;
+    z-index: 6666;
+    padding: 20px 0;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    form {
+        border: 1px solid var(--lightgrey);
+        padding: 20px 30px 20px 80px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='Capa_1' x='0px' y='0px' viewBox='0 0 511.999 511.999' style='enable-background:new 0 0 511.999 511.999;' xml:space='preserve' width='512px' height='512px' class=''%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cpath d='M508.874,478.708L360.142,329.976c28.21-34.827,45.191-79.103,45.191-127.309c0-111.75-90.917-202.667-202.667-202.667 S0,90.917,0,202.667s90.917,202.667,202.667,202.667c48.206,0,92.482-16.982,127.309-45.191l148.732,148.732 c4.167,4.165,10.919,4.165,15.086,0l15.081-15.082C513.04,489.627,513.04,482.873,508.874,478.708z M202.667,362.667 c-88.229,0-160-71.771-160-160s71.771-160,160-160s160,71.771,160,160S290.896,362.667,202.667,362.667z' data-original='%23000000' class='active-path' data-old_color='%23000000' fill='%23AEAEAE'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        background-position: center left 30px;
+        background-repeat: no-repeat;
+        background-size: 30px;
+        @include breakpoint(1023) {
+            padding: 10px 15px 10px 40px;
+            background-size: 20px;
+            background-position: center left 10px;
+        }
+    }
+    input {
+        flex: 1;
+        border: none;
+        outline: none;
+        font-size: 20px;
+        &::placeholder {
+            color: rgb(129, 129, 129);
+        }
+        @include breakpoint(767) {
+            font-size: 17px;
+        }
+    }
+    button {
+        svg {
+            --size: 30px;
+            width: var(--size);
+            height: var(--size);
+            color: rgb(129, 129, 129);
+            @include breakpoint(767) {
+                --size: 20px;
+            }
+        }
+    }
+}
+
+.overlay {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1998;
+    background: rgba(0, 0, 0, 0.5);
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    &.overlay-active {
+        opacity: 1;
+        visibility: visible;
+    }
+}

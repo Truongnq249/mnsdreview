@@ -1,0 +1,28 @@
+/** Button **/
+
+.button-reset {
+    background: transparent;
+    border: none;
+    padding: 0;
+    outline: none;
+    &:focus {
+        outline: none;
+    }
+}
+
+.button {
+    padding: 15px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    &-primary {
+        background-color: var(--primary-color);
+        color: var(--black);
+        &:hover {
+            background-color: #e1a900;
+            color: var(--black);
+        }
+    }
+}

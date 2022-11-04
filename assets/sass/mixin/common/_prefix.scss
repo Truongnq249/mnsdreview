@@ -1,0 +1,25 @@
+@mixin prefix($prop, $value) {
+    -webkit-#{$prop}: #{$value};
+    -moz-#{$prop}: #{$value};
+    -ms-#{$prop}: #{$value};
+    -o-#{$prop}: #{$value};
+    #{$prop}: #{$value};
+}
+
+// Example 
+
+/* SCSS */
+
+// div {
+//     @include css3-prefix(transform, scale3d(2.5, 2, 1.5));
+//  }
+
+/* CSS */
+
+// div {
+//     -webkit-transform: scale3d(2.5, 2, 1.5);
+//     -moz-transform: scale3d(2.5, 2, 1.5);
+//     -ms-transform: scale3d(2.5, 2, 1.5);
+//     -o-transform: scale3d(2.5, 2, 1.5);
+//     transform: scale3d(2.5, 2, 1.5);
+//  }
