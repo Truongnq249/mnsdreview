@@ -14,23 +14,23 @@ get_header();
 <main>
     <div class="container">
         <div class="single-blog__head position-relative">
-            <img class="w-100 h-100 position-absolute" src="<?php echo simp_post_thumbnail_full()?>"
+            <img class="w-100 h-100 position-absolute" src="<?php !(get_field('post_bg')) ? echo get_field('post_bg') : echo simp_post_thumbnail_full()?>"
                 alt="<?php the_title()?>">
             <div class="single-blog__head-content text-center bg-white position-absolute">
                 <div class="d-flex justify-content-center">
                     <h4 class="single-blog__head-category mb-4 position-relative">
                         <?php $taxonomy = 'category';
-                $terms = wp_get_post_terms($post->ID, $taxonomy);
-                //print_rr($terms);
-                foreach ($terms as $term) {
-                 $term_link = get_term_link( $term, $taxonomy );
+                            $terms = wp_get_post_terms($post->ID, $taxonomy);
+                            //print_rr($terms);
+                            foreach ($terms as $term) {
+                            $term_link = get_term_link( $term, $taxonomy );
 
-                 if ( is_wp_error( $term_link ) )
-                 echo $term_link->get_error_message();
+                            if ( is_wp_error( $term_link ) )
+                            echo $term_link->get_error_message();
 
-                 if ( is_wp_error( $term_link ) ) {
-                 continue;
-                 } ?>
+                            if ( is_wp_error( $term_link ) ) {
+                            continue;
+                            } ?>
 
                         <?php } ?>
                         <a href="<?php echo $term_link;?>" class="position-relative">
