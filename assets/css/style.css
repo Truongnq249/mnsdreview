@@ -424,7 +424,9 @@ select {
 .post-content blockquote {
   padding: 10px 20px;
   margin: 0 0 20px;
-  border-left: 5px solid #eb2b2d;
+  background-color: var(--primary-color);
+  color: #fff;
+  border-radius: 4px;
 }
 
 .post-content blockquote p {
@@ -468,19 +470,19 @@ select {
 }
 
 .post-content h5 {
-  font-size: 21px;
+  font-size: 20px;
 }
 
 .post-content h4 {
-  font-size: 24px;
+  font-size: 22px;
 }
 
 .post-content h3 {
-  font-size: 27px;
+  font-size: 24px;
 }
 
 .post-content h2 {
-  font-size: 30px;
+  font-size: 27px;
 }
 
 .post-content ul,
