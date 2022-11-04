@@ -9,12 +9,18 @@
  */
 
 get_header();
+$url = '';
+if(get_field('post_bg')){
+    $url = get_field('post_bg');
+}else{
+    $url = simp_post_thumbnail_full();
+}
 ?>
 
 <main>
     <div class="container">
         <div class="single-blog__head position-relative">
-            <img class="w-100 h-100 position-absolute" src="<?php !(get_field('post_bg')) ? echo get_field('post_bg') : echo simp_post_thumbnail_full()?>"
+            <img class="w-100 h-100 position-absolute" src="<?php echo $url;?>"
                 alt="<?php the_title()?>">
             <div class="single-blog__head-content text-center bg-white position-absolute">
                 <div class="d-flex justify-content-center">
