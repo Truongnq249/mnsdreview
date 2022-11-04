@@ -514,6 +514,7 @@ select {
 .post-content h5,
 .post-content h6 {
   margin: 0 0 15px;
+  font-weight: 700;
 }
 .post-content h2 a,
 .post-content h3 a,
